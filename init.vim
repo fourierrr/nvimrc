@@ -46,6 +46,8 @@ noremap <LEADER><CR> :nohlsearch<CR>
 
 map Q :q<CR>
 map S :w<CR>
+" open a terminal in a buttom split windows
+map T :sp<CR><C-w>j:term<CR>
 map R :source %<CR>
 map ; :
 
