@@ -63,9 +63,13 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'yegappan/mru'
 Plug 'rakr/vim-one'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
+
+"mru conf #######################################
+nnoremap mm :MRUToggle<CR>
 
 
 "vim-go conf  ###############################################
@@ -97,8 +101,9 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ }
 
 "nerdtree conf #################################################
-autocmd vimenter * if !argc()|NERDTree|endif
+" autocmd vimenter * if !argc()|NERDTree|endif
 nnoremap ff :NERDTreeToggle<CR> 
+nnoremap fc :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 let g:NERDTreeWinSize = 35
 "let g:NERDTreeDirArrowExpandable = '+'
@@ -108,6 +113,34 @@ let g:NERDTreeWinSize = 35
 
 "Togglebar conf #######################################
 nmap tt :TagbarToggle<CR>
+let g:tagbar_map_showproto = '\'
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
 
 
 "colorscheme conf ###############################################
