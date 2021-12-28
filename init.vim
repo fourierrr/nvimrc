@@ -58,6 +58,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'SirVer/ultisnips'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
@@ -68,11 +69,17 @@ Plug 'rakr/vim-one'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
+" ultisnips conf ###############################################
+let g:UltiSnipsExpandTrigger="<tab>"
+
+
+
 "mru conf #######################################
 nnoremap mm :MRUToggle<CR>
 
 
 "vim-go conf  ###############################################
+ let g:go_auto_type_info = 1
 let g:go_highlight_types = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_functions = 1
