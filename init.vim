@@ -51,6 +51,8 @@ map T :sp<CR><C-w>j:term<CR>
 map R :source %<CR>
 map ; :
 
+au BufRead,BufNewFile Dockerfile.* set filetype=dockerfile
+
 call plug#begin('~/.config/nvim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'majutsushi/tagbar'
@@ -79,7 +81,10 @@ nnoremap mm :MRUToggle<CR>
 
 
 "vim-go conf  ###############################################
- let g:go_auto_type_info = 1
+let g:go_def_mode="godef"
+let g:go_fmt_command = "goimports"
+
+let g:go_auto_type_info = 1
 let g:go_highlight_types = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_functions = 1
@@ -162,8 +167,8 @@ let g:airline_theme='one'
 
 
 "coc conf    #######################################
-autocmd filetype * highlight Pmenu ctermbg=lightgray 
-autocmd filetype * highlight Cursorline ctermbg=none cterm=underline 
+au BufRead,BufNewFile * highlight Pmenu ctermbg=lightgray 
+au BufRead,BufNewFile * highlight Cursorline ctermbg=none cterm=underline 
 
 " 几个非常重要的定义跳转键,gd, gr
 " GoTo code navigation.
