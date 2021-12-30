@@ -54,6 +54,7 @@ map ; :
 au BufRead,BufNewFile Dockerfile.* set filetype=dockerfile
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -83,7 +84,7 @@ nnoremap mm :MRUToggle<CR>
 "vim-go conf  ###############################################
 let g:go_def_mode="godef"
 let g:go_fmt_command = "goimports"
-
+let g:go_list_type = "quickfix"
 let g:go_auto_type_info = 1
 let g:go_highlight_types = 1
 let g:go_highlight_extra_types = 1
