@@ -19,7 +19,7 @@ filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
-set mouse=a
+" set mouse=a
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -35,6 +35,8 @@ map <LEADER><up> <C-w>k
 map <LEADER><down> <C-w>j
 map <LEADER><left> <C-w>h
 map <LEADER><right> <C-w>l
+
+map <LEADER>n :set nu! relativenumber!<CR>
 
 noremap = nzz
 noremap - Nzz
