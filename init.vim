@@ -36,7 +36,7 @@ map <LEADER><down> <C-w>j
 map <LEADER><left> <C-w>h
 map <LEADER><right> <C-w>l
 
-map <LEADER>n :set nu! relativenumber!<CR>
+map <LEADER>n :set nu! relativenumber!<CR>:GitGutterToggle<CR>
 
 noremap = nzz
 noremap - Nzz
