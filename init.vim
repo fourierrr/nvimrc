@@ -1,4 +1,4 @@
-syntax on 
+syntax on{()}
 let mapleader=" "
 set hlsearch
 set ignorecase
@@ -67,7 +67,7 @@ Plug 'SirVer/ultisnips'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim',{ 'do': 'yarn install'  }
 Plug 'ayu-theme/ayu-vim'
 Plug 'yegappan/mru'
 Plug 'rakr/vim-one'
