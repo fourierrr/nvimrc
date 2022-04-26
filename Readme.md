@@ -6,10 +6,10 @@ macos直接使用homebrew
 brew install neovim
 ```
 
-### 1.2 node/yarn/fzf
-包括coc在内的的许多插件依赖node和yarn，fzf插件需要fzf的可执行程序
+### 1.2 node/yarn/fzf/ctags
+包括coc在内的的许多插件依赖node和yarn，fzf插件需要fzf的可执行程序, tagbar依赖ctags的可执行程序
 ```shell
-brew install node yarn fzf
+brew install node yarn fzf ctags
 ```
 
 ### 1.3 pynvim
