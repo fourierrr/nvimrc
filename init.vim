@@ -62,7 +62,7 @@ Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'SirVer/ultisnips'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'Xuyuanp/nerdtree-git-plugin'
