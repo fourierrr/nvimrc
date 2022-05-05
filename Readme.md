@@ -41,6 +41,7 @@ git clone git@github.com:fourierrr/nvim.git
 - [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) 自动括号补全
 - [rakr/vim-one](https://github.com/rakr/vim-one) 一个漂亮的vim颜色主题
 - [ayu-theme/ayu-vim](https://github.com/ayu-theme/ayu-vim) 一个漂亮的vim颜色主题
+- [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) 给nerdtree、airline等添加好看的图标icon
 
 相关的设置可以去官方git repo查看，init.vim里也有部分注释说明了快捷键
 
