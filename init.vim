@@ -1,4 +1,4 @@
-syntax on{()}
+syntax on
 let mapleader=" "
 set hlsearch
 set ignorecase
