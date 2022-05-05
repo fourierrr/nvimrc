@@ -2,7 +2,6 @@ syntax on{()}
 let mapleader=" "
 set hlsearch
 set ignorecase
-exec "nohlsearch"
 set incsearch
 set cursorline
 set number
@@ -11,8 +10,9 @@ set relativenumber
 set cursorline
 set wrap
 set showcmd
-set cmdheight=2
-set updatetime=300
+set cmdheight=1
+set updatetime=200
+set encoding=UTF-8
 set wildmenu
 
 filetype on
@@ -53,6 +53,7 @@ map T :sp<CR><C-w>j:term<CR>
 map R :source %<CR>
 map ; :
 
+exec "nohlsearch"
 au BufRead,BufNewFile Dockerfile.* set filetype=dockerfile
 
 call plug#begin('~/.config/nvim/plugged')
@@ -72,6 +73,7 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'yegappan/mru'
 Plug 'rakr/vim-one'
 Plug 'jiangmiao/auto-pairs'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " ultisnips conf ###############################################
@@ -169,6 +171,9 @@ colorscheme one
 set background=dark
 highlight Normal guibg=NONE ctermbg=None
 let g:airline_theme='one'
+let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#formatter = 'default'
 
 
 "coc conf    #######################################
