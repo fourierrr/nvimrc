@@ -43,6 +43,8 @@ git clone git@github.com:fourierrr/nvim.git
 - [ayu-theme/ayu-vim](https://github.com/ayu-theme/ayu-vim) 一个漂亮的vim颜色主题
 - [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) 给nerdtree、airline等添加好看的图标icon
 - [voldikss/vim-floaterm](https://github.com/voldikss/vim-floaterm) 在vim中打开浮动的终端
+- [gcmt/wildfire.vim](https://github.com/gcmt/wildfire.vim) normal下使用enter快速选中()''""[]等包裹的代码块  
+
 相关的设置可以去官方git repo查看，init.vim里也有部分注释说明了快捷键
 
 ## 三、下载并使用vim-plug安装插件

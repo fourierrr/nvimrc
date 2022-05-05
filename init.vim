@@ -76,6 +76,7 @@ Plug 'rakr/vim-one'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ryanoasis/vim-devicons'
 Plug 'voldikss/vim-floaterm'
+Plug 'gcmt/wildfire.vim'
 call plug#end()
 
 " ultisnips conf ###############################################
