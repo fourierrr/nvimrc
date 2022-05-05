@@ -87,6 +87,8 @@ nnoremap mm :MRUToggle<CR>
 let g:go_def_mode="godef"
 let g:go_fmt_command = "goimports"
 let g:go_list_type = "quickfix"
+let g:go_fmt_autosave = 1
+let g:go_import_autosave = 1
 let g:go_auto_type_info = 1
 let g:go_highlight_types = 1
 let g:go_highlight_extra_types = 1
