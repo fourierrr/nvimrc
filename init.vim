@@ -48,8 +48,9 @@ noremap <LEADER><CR> :nohlsearch<CR>
 
 map Q :q<CR>
 map S :w<CR>
+" Note: this has been replaced by plugin vim-floaterm
 " open a terminal in a buttom split windows
-map T :sp<CR><C-w>j:term<CR>
+" map T :sp<CR><C-w>j:term<CR>
 map R :source %<CR>
 map ; :
 
@@ -74,6 +75,7 @@ Plug 'yegappan/mru'
 Plug 'rakr/vim-one'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ryanoasis/vim-devicons'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 " ultisnips conf ###############################################
@@ -189,6 +191,10 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>0 <Plug>AirlineSelectTab0
 nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>= <Plug>AirlineSelectNextTa
+
+"vim-floaterm cof ###############################################
+nmap T :FloatermToggle<CR>
+
 
 "coc conf    #######################################
 au BufRead,BufNewFile * highlight Pmenu ctermbg=lightgray 
