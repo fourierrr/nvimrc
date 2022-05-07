@@ -59,7 +59,8 @@ au BufRead,BufNewFile Dockerfile.* set filetype=dockerfile
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -67,7 +68,6 @@ Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'SirVer/ultisnips'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim',{ 'do': 'yarn install'  }
 Plug 'ayu-theme/ayu-vim'
@@ -77,6 +77,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'ryanoasis/vim-devicons'
 Plug 'voldikss/vim-floaterm'
 Plug 'gcmt/wildfire.vim'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 " ultisnips conf ###############################################
@@ -136,28 +137,28 @@ nnoremap <silent><nowait> <LEADER>f :<C-u>Rg<CR>
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 "nerdtree-git-plugin conf #######################################
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-                \ 'Modified'  :'✹',
-                \ 'Staged'    :'✚',
-                \ 'Untracked' :'✭',
-                \ 'Renamed'   :'➜',
-                \ 'Unmerged'  :'═',
-                \ 'Deleted'   :'✖',
-                \ 'Dirty'     :'✗',
-                \ 'Ignored'   :'☒',
-                \ 'Clean'     :'✔︎',
-                \ 'Unknown'   :'?',
-                \ }
+"let g:NERDTreeGitStatusIndicatorMapCustom = {
+"                \ 'Modified'  :'✹',
+"                \ 'Staged'    :'✚',
+"                \ 'Untracked' :'✭',
+"                \ 'Renamed'   :'➜',
+"                \ 'Unmerged'  :'═',
+"                \ 'Deleted'   :'✖',
+"                \ 'Dirty'     :'✗',
+"                \ 'Ignored'   :'☒',
+"                \ 'Clean'     :'✔︎',
+"                \ 'Unknown'   :'?',
+"                \ }
 
-"nerdtree conf #################################################
-" autocmd vimenter * if !argc()|NERDTree|endif
-nnoremap ff :NERDTreeToggle<CR> 
-nnoremap fc :NERDTreeFind<CR>
-let NERDTreeShowHidden=1
-let g:NERDTreeWinSize = 35
-"let g:NERDTreeDirArrowExpandable = '+'
-"let g:NERDTreeDirArrowCollapsible = '-'
-"let NERDTreeDirArrows = 1
+""nerdtree conf #################################################
+"" autocmd vimenter * if !argc()|NERDTree|endif
+"nnoremap ff :NERDTreeToggle<CR> 
+"nnoremap fc :NERDTreeFind<CR>
+"let NERDTreeShowHidden=1
+"let g:NERDTreeWinSize = 35
+""let g:NERDTreeDirArrowExpandable = '+'
+""let g:NERDTreeDirArrowCollapsible = '-'
+""let NERDTreeDirArrows = 1
 
 
 "Togglebar conf #######################################
@@ -227,6 +228,7 @@ nmap T :FloatermToggle<CR>
 "coc conf    #######################################
 let g:coc_global_extensions = [
     \ 'coc-actions',
+    \ 'coc-explorer',
     \ 'coc-snippets',
     \ 'coc-json',
     \ 'coc-yaml',
@@ -250,6 +252,13 @@ xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>aw  <Plug>(coc-codeaction-selected)w
 nmap <leader>rn <Plug>(coc-rename)
 
+" coc-snippets
+imap <C-a> <Plug>(coc-snippets-expand)
+vmap <C-e> <Plug>(coc-snippets-select)
+let g:coc_snippet_next = '<c-e>'
+let g:coc_snippet_prev = '<c-n>'
+imap <C-e> <Plug>(coc-snippets-expand-jump)
+nmap ff :CocCommand explorer<CR>
 
 "查找上一个下一个报错的代码段
 " Use `[g` and `]g` to navigate diagnostics
