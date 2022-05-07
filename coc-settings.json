@@ -79,8 +79,7 @@
             ],
             "initializationOptions": {
                 "gocodeCompletionEnabled": true,
-                "diagnosticsEnabled": true,
-                "lintTool": "golint"
+                "diagnosticsEnabled": true
             }
         },
         "bash": {
