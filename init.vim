@@ -59,11 +59,15 @@ au BufRead,BufNewFile Dockerfile.* set filetype=dockerfile
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Plug 'preservim/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'SirVer/ultisnips'
@@ -131,10 +135,19 @@ let g:go_highlight_variable_assignments = 0
 let g:go_highlight_variable_declarations = 0
 let g:go_doc_keywordprg_enabled = 0
 
+"telescope conf
+nnoremap <leader>f <cmd>Telescope find_files<cr>
+nnoremap <leader>g <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>r <cmd>Telescope oldfilesi<cr>
+
+
+
+
 "fzf conf ###############################################
-nnoremap <silent><nowait> <LEADER>o :<C-u>FZF<CR> 
-nnoremap <silent><nowait> <LEADER>f :<C-u>Rg<CR> 
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+" nnoremap <silent><nowait> <LEADER>o :<C-u>FZF<CR> 
+" nnoremap <silent><nowait> <LEADER>f :<C-u>Rg<CR> 
+" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 "nerdtree-git-plugin conf #######################################
 "let g:NERDTreeGitStatusIndicatorMapCustom = {
