@@ -1,8 +1,9 @@
 syntax on
 let mapleader=" "
 set hlsearch
-set ignorecase
 set incsearch
+set ignorecase
+set smartcase
 set cursorline
 set number
 set relativenumber
@@ -25,8 +26,14 @@ set shiftwidth=4
 set expandtab
 set laststatus=2
 set scrolloff=5
-map <S-down> 5<down>
-map <S-up> 5<up>
+map <S-down> 7<down>
+map <S-up> 7<up>
+nmap <C-u> 7j
+nmap <C-d> 7k
+
+"move hole line up or down
+nmap <A-up> <Esc>:m .-2<CR>
+nmap <A-down> <Esc>:m .+1<CR>
 
 "map <LEADER><LEADER> <ESC>/<++><CR>c4l
 map <LEADER>html :%TOhtml<CR>
@@ -42,9 +49,14 @@ noremap = nzz
 noremap - Nzz
 noremap <LEADER><CR> :nohlsearch<CR>
 
+inoremap jk <ESC>
+
+"vmode 快速调整代码缩进
+vmap < <gv
+vmap > >gv
 
 
-
+nmap <leader>q :bdelete<cr>
 
 map Q :q<CR>
 map S :w<CR>
@@ -74,7 +86,7 @@ Plug 'SirVer/ultisnips'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim',{ 'do': 'yarn install'  }
-Plug 'ayu-theme/ayu-vim'
+" Plug 'ayu-theme/ayu-vim'
 Plug 'yegappan/mru'
 Plug 'rakr/vim-one'
 Plug 'jiangmiao/auto-pairs'
@@ -83,6 +95,22 @@ Plug 'voldikss/vim-floaterm'
 Plug 'gcmt/wildfire.vim'
 Plug 'honza/vim-snippets'
 call plug#end()
+
+
+"colorscheme conf ###############################################
+"set termguicolors
+"let ayucolor="dark"
+"colorscheme ayu
+colorscheme one
+" set background=dark
+highlight Normal guibg=NONE ctermbg=None
+highlight Pmenu ctermbg=lightgray 
+highlight Cursorline ctermbg=none cterm=underline 
+" au BufRead,BufNewFile * highlight Pmenu ctermbg=lightgray 
+" au BufRead,BufNewFile * highlight Cursorline ctermbg=none cterm=underline 
+
+
+
 
 " ultisnips conf ###############################################
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -138,8 +166,8 @@ let g:go_doc_keywordprg_enabled = 0
 "telescope conf
 nnoremap <leader>f <cmd>Telescope find_files<cr>
 nnoremap <leader>g <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>r <cmd>Telescope oldfilesi<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>o <cmd>Telescope oldfiles<cr>
 
 
 
@@ -206,14 +234,6 @@ let g:tagbar_type_go = {
 \ }
 
 
-"colorscheme conf ###############################################
-"set termguicolors
-"let ayucolor="dark"
-"colorscheme ayu
-
-colorscheme one
-set background=dark
-highlight Normal guibg=NONE ctermbg=None
 
 "vim-ailline conf ###############################################
 let g:airline_theme='one'
@@ -248,8 +268,6 @@ let g:coc_global_extensions = [
     \ 'coc-docker',
     \ 'coc-vimlsp',
 	\ 'coc-go']
-au BufRead,BufNewFile * highlight Pmenu ctermbg=lightgray 
-au BufRead,BufNewFile * highlight Cursorline ctermbg=none cterm=underline 
 
 " 几个非常重要的定义跳转键,gd, gr
 " GoTo code navigation.
@@ -300,3 +318,5 @@ nmap <silent> <leader>= <Plug>(coc-diagnostic-next)
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+
