@@ -1,7 +1,5 @@
 # ignore evething in this repo except init.vim
 
-/*
+plugged
 
-!/init.vim
-!/.gitignore
-!/coc-settings.json
+

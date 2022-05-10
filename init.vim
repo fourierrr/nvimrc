@@ -8,6 +8,8 @@ set cursorline
 set number
 set relativenumber
 
+
+set termguicolors
 set cursorline
 set wrap
 set showcmd
@@ -21,15 +23,15 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 " set mouse=a
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set laststatus=2
 set scrolloff=5
 map <S-down> 7<down>
 map <S-up> 7<up>
-nmap <C-u> 7j
-nmap <C-d> 7k
+nmap <C-d> 7j
+nmap <C-u> 7k
 
 "move hole line up or down
 nmap <A-up> <Esc>:m .-2<CR>
@@ -77,37 +79,31 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Plug 'preservim/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'majutsushi/tagbar'
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'majutsushi/tagbar'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+"" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'SirVer/ultisnips'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim',{ 'do': 'yarn install'  }
-" Plug 'ayu-theme/ayu-vim'
-Plug 'yegappan/mru'
-Plug 'rakr/vim-one'
 Plug 'jiangmiao/auto-pairs'
-Plug 'ryanoasis/vim-devicons'
+Plug 'nvim-lualine/lualine.nvim'
+" Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'voldikss/vim-floaterm'
 Plug 'gcmt/wildfire.vim'
 Plug 'honza/vim-snippets'
+Plug 'yegappan/mru'
+"colorscheme Plug
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+" Plug 'rakr/vim-one'
+" Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
-
-"colorscheme conf ###############################################
-"set termguicolors
-"let ayucolor="dark"
-"colorscheme ayu
-colorscheme one
-" set background=dark
-highlight Normal guibg=NONE ctermbg=None
-highlight Pmenu ctermbg=lightgray 
-highlight Cursorline ctermbg=none cterm=underline 
-" au BufRead,BufNewFile * highlight Pmenu ctermbg=lightgray 
-" au BufRead,BufNewFile * highlight Cursorline ctermbg=none cterm=underline 
 
 
 
@@ -203,56 +199,85 @@ nnoremap <leader>o <cmd>Telescope oldfiles<cr>
 
 
 "Togglebar conf #######################################
-nmap tt :TagbarToggle<CR>
-let g:tagbar_map_showproto = '\'
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
+" nmap tt :TagbarToggle<CR>
+" let g:tagbar_map_showproto = '\'
+" let g:tagbar_type_go = {
+"     \ 'ctagstype' : 'go',
+"     \ 'kinds'     : [
+"         \ 'p:package',
+"         \ 'i:imports:1',
+"         \ 'c:constants',
+"         \ 'v:variables',
+"         \ 't:types',
+"         \ 'n:interfaces',
+"         \ 'w:fields',
+"         \ 'e:embedded',
+"         \ 'm:methods',
+"         \ 'r:constructor',
+"         \ 'f:functions'
+"     \ ],
+"     \ 'sro' : '.',
+"     \ 'kind2scope' : {
+"         \ 't' : 'ctype',
+"         \ 'n' : 'ntype'
+"     \ },
+"     \ 'scope2kind' : {
+"         \ 'ctype' : 't',
+"         \ 'ntype' : 'n'
+"     \ },
+"     \ 'ctagsbin'  : 'gotags',
+"     \ 'ctagsargs' : '-sort -silent'
+" \ }
 
+"bufferline conf 
+lua << END
+require "user.conf.bufferline"
+END
+nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
+nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
+nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
+nnoremap <silent><leader>4 <Cmd>BufferLineGoToBuffer 4<CR>
+nnoremap <silent><leader>5 <Cmd>BufferLineGoToBuffer 5<CR>
+nnoremap <silent><leader>6 <Cmd>BufferLineGoToBuffer 6<CR>
+nnoremap <silent><leader>7 <Cmd>BufferLineGoToBuffer 7<CR>
+nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
+nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
 
-
-"vim-ailline conf ###############################################
-let g:airline_theme='one'
-let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline#extensions#tabline#formatter = 'default'
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>0 <Plug>AirlineSelectTab0
-nmap <leader>- <Plug>AirlineSelectPrevTab
-nmap <leader>= <Plug>AirlineSelectNextTa
+"lualine conf
+lua << END
+require('lualine').setup {
+  options = {
+    theme = "catppuccin"
+	-- ... the rest of your lualine config
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = { file_name },
+    lualine_x = { "location" },
+    lualine_y = {},
+    lualine_z = {},
+  },
+}
+END
+""vim-ailline conf ###############################################
+"let g:airline_theme='one'
+"let g:airline#extensions#tabline#enabled = 1
+"" let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+"let g:airline#extensions#tabline#formatter = 'default'
+"let g:airline#extensions#tabline#buffer_idx_mode = 1
+"nmap <leader>1 <Plug>AirlineSelectTab1
+"nmap <leader>2 <Plug>AirlineSelectTab2
+"nmap <leader>3 <Plug>AirlineSelectTab3
+"nmap <leader>4 <Plug>AirlineSelectTab4
+"nmap <leader>5 <Plug>AirlineSelectTab5
+"nmap <leader>6 <Plug>AirlineSelectTab6
+"nmap <leader>7 <Plug>AirlineSelectTab7
+"nmap <leader>8 <Plug>AirlineSelectTab8
+"nmap <leader>9 <Plug>AirlineSelectTab9
+"nmap <leader>0 <Plug>AirlineSelectTab0
+"nmap <leader>- <Plug>AirlineSelectPrevTab
+"nmap <leader>= <Plug>AirlineSelectNextTa
 
 "vim-floaterm cof ###############################################
 nmap T :FloatermToggle<CR>
@@ -320,3 +345,15 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 
+"colorscheme conf ###############################################
+"set termguicolors
+"let ayucolor="dark"
+"colorscheme ayu
+" colorscheme one
+" Vim Script
+colorscheme catppuccin
+" highlight Normal guibg=NONE ctermbg=None
+" highlight Pmenu ctermbg=lightgray 
+" highlight Cursorline ctermbg=none cterm=underline 
+" au BufRead,BufNewFile * highlight Pmenu ctermbg=lightgray 
+" au BufRead,BufNewFile * highlight Cursorline ctermbg=none cterm=underline 
