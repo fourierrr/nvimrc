@@ -32,6 +32,8 @@ map <S-down> 7<down>
 map <S-up> 7<up>
 nmap <C-d> 7j
 nmap <C-u> 7k
+map <C-j> 7j
+map <C-k> 7k
 
 "move hole line up or down
 nmap <A-up> <Esc>:m .-2<CR>
@@ -77,6 +79,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'goolord/alpha-nvim'
 " Plug 'preservim/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'majutsushi/tagbar'
@@ -245,48 +248,21 @@ nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
 
 "lualine conf
 lua << END
-require('lualine').setup {
-  options = {
-    theme = "catppuccin"
-	-- ... the rest of your lualine config
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = { file_name },
-    lualine_x = { "location" },
-    lualine_y = {},
-    lualine_z = {},
-  },
-}
+require "user.conf.lualine"
 END
-""vim-ailline conf ###############################################
-"let g:airline_theme='one'
-"let g:airline#extensions#tabline#enabled = 1
-"" let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-"let g:airline#extensions#tabline#formatter = 'default'
-"let g:airline#extensions#tabline#buffer_idx_mode = 1
-"nmap <leader>1 <Plug>AirlineSelectTab1
-"nmap <leader>2 <Plug>AirlineSelectTab2
-"nmap <leader>3 <Plug>AirlineSelectTab3
-"nmap <leader>4 <Plug>AirlineSelectTab4
-"nmap <leader>5 <Plug>AirlineSelectTab5
-"nmap <leader>6 <Plug>AirlineSelectTab6
-"nmap <leader>7 <Plug>AirlineSelectTab7
-"nmap <leader>8 <Plug>AirlineSelectTab8
-"nmap <leader>9 <Plug>AirlineSelectTab9
-"nmap <leader>0 <Plug>AirlineSelectTab0
-"nmap <leader>- <Plug>AirlineSelectPrevTab
-"nmap <leader>= <Plug>AirlineSelectNextTa
 
-"vim-floaterm cof ###############################################
+"alpha-nvim conf
+lua << END
+require "user.conf.alpha-nvim"
+END
+
+" vim-floaterm cof ###############################################
 nmap T :FloatermToggle<CR>
 
 
 "coc conf    #######################################
 let g:coc_global_extensions = [
     \ 'coc-actions',
-    \ 'coc-explorer',
     \ 'coc-snippets',
     \ 'coc-json',
     \ 'coc-yaml',
@@ -314,7 +290,6 @@ vmap <C-e> <Plug>(coc-snippets-select)
 let g:coc_snippet_next = '<c-e>'
 let g:coc_snippet_prev = '<c-n>'
 imap <C-e> <Plug>(coc-snippets-expand-jump)
-nmap ff :CocCommand explorer<CR>
 
 "查找上一个下一个报错的代码段
 " Use `[g` and `]g` to navigate diagnostics
