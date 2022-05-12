@@ -28,6 +28,10 @@ set shiftwidth=2
 set expandtab
 set laststatus=2
 set scrolloff=5
+
+map q <nop>
+map r <nop>
+
 map <S-down> 7<down>
 map <S-up> 7<up>
 nmap <C-d> 7j
@@ -60,9 +64,10 @@ vmap < <gv
 vmap > >gv
 
 
-nmap <leader>q :bdelete<cr>
+nmap <leader>d :bdelete<cr>
+nmap <leader>q :q<CR>
 
-map Q :q<CR>
+" map Q :q<CR>
 map S :w<CR>
 " Note: this has been replaced by plugin vim-floaterm
 " open a terminal in a buttom split windows
@@ -167,7 +172,7 @@ let g:go_doc_keywordprg_enabled = 0
 nnoremap <leader>f <cmd>Telescope find_files<cr>
 nnoremap <leader>g <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
-nnoremap <leader>o <cmd>Telescope oldfiles<cr>
+nnoremap <leader>r <cmd>Telescope oldfiles<cr>
 
 
 
