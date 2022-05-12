@@ -97,10 +97,11 @@ Plug 'nvim-lualine/lualine.nvim'
 " Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'ahmedkhalf/project.nvim'
 Plug 'voldikss/vim-floaterm'
 Plug 'gcmt/wildfire.vim'
 Plug 'honza/vim-snippets'
-Plug 'yegappan/mru'
+" Plug 'yegappan/mru'
 "colorscheme Plug
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 " Plug 'rakr/vim-one'
@@ -117,7 +118,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 
 
 "mru conf #######################################
-nnoremap mm :MRUToggle<CR>
+" nnoremap mm :MRUToggle<CR>
 
 
 "vim-go conf  ###############################################
@@ -256,7 +257,22 @@ lua << END
 require "user.conf.alpha-nvim"
 END
 
-" vim-floaterm cof ###############################################
+
+
+
+
+"nvim-tree conf
+lua << END
+require "user.conf.nvim-tree"
+END
+nmap ff :NvimTreeToggle<cr>
+
+"project conf 
+lua << END
+require "user.conf.project"
+END
+
+"vim-floaterm cof ###############################################
 nmap T :FloatermToggle<CR>
 
 
