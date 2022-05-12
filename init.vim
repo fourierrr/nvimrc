@@ -30,14 +30,15 @@ set laststatus=2
 set scrolloff=5
 
 map q <nop>
+map ? <nop>
 map r <nop>
 
 map <S-down> 7<down>
 map <S-up> 7<up>
 nmap <C-d> 7j
 nmap <C-u> 7k
-map <C-j> 7j
-map <C-k> 7k
+nmap <C-j> 7j
+nmap <C-k> 7k
 
 "move hole line up or down
 nmap <A-up> <Esc>:m .-2<CR>
@@ -49,7 +50,9 @@ map <LEADER>html :%TOhtml<CR>
 map <LEADER><up> <C-w>k
 map <LEADER><down> <C-w>j
 map <LEADER><left> <C-w>h
+map <C-h> <C-w>h
 map <LEADER><right> <C-w>l
+map <C-l> <C-w>l
 
 map <LEADER>n :set nu! relativenumber!<CR>:GitGutterToggle<CR>
 
@@ -84,6 +87,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'xiyaowong/nvim-transparent'
 Plug 'goolord/alpha-nvim'
 " Plug 'preservim/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -172,7 +176,10 @@ let g:go_doc_keywordprg_enabled = 0
 nnoremap <leader>f <cmd>Telescope find_files<cr>
 nnoremap <leader>g <cmd>Telescope live_grep<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
-nnoremap <leader>r <cmd>Telescope oldfiles<cr>
+nnoremap <leader>p <cmd>Telescope projects<cr>
+nnoremap mm <cmd>Telescope oldfiles<cr>
+nnoremap <leader>o <cmd>Telescope oldfiles<cr>
+
 
 
 
@@ -262,9 +269,10 @@ lua << END
 require "user.conf.alpha-nvim"
 END
 
-
-
-
+lua << END
+require "user.conf.nvim-transparent"
+END
+nmap <leader>t :TransparentToggle<cr>
 
 "nvim-tree conf
 lua << END
@@ -353,3 +361,4 @@ colorscheme catppuccin
 " highlight Cursorline ctermbg=none cterm=underline 
 " au BufRead,BufNewFile * highlight Pmenu ctermbg=lightgray 
 " au BufRead,BufNewFile * highlight Cursorline ctermbg=none cterm=underline 
+

@@ -91,8 +91,9 @@ nvim_tree.setup({
         -- user mappings go here
         -- { key = { "l", "<CR>", "o" }, action = "edit" },
         -- { key = "h", action = "close_node" },
-        -- { key = "v", action = "vsplit" },
+        { key = "v", action = "vsplit" },
         -- { key = "O", action = "cd" },
+        { key="?",action="toggle_help" }
       },
     },
   },
