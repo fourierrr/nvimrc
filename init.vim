@@ -9,6 +9,7 @@ au BufRead,BufNewFile Dockerfile.* set filetype=dockerfile
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'lewis6991/impatient.nvim'
+Plug 'ethanholz/nvim-lastplace'
 " Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -51,7 +52,7 @@ call plug#end()
 "inpatient nvim  speed up loading lua module
 lua require('impatient')
 lua require('user.conf.autosave')
-
+lua require('user.conf.nvim-lastplace')
 
 " ultisnips conf ###############################################
 let g:UltiSnipsExpandTrigger="<tab>"
