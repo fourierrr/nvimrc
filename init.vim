@@ -1,5 +1,3 @@
-
-
 lua << END
 require "user.keymaps"
 require "user.options"
@@ -33,6 +31,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'neoclide/coc.nvim',{ 'do': 'yarn install'  }
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'Pocco81/AutoSave.nvim'
 " Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
@@ -51,7 +50,7 @@ call plug#end()
 
 "inpatient nvim  speed up loading lua module
 lua require('impatient')
-
+lua require('user.conf.autosave')
 
 
 " ultisnips conf ###############################################
