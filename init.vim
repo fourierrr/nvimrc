@@ -12,6 +12,7 @@ Plug 'lewis6991/impatient.nvim'
 Plug 'ethanholz/nvim-lastplace'
 " Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'phaazon/hop.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -55,6 +56,7 @@ lua require('impatient')
 lua require('user.conf.autosave')
 lua require('user.conf.nvim-lastplace')
 lua require('user.conf.indent-blankline')
+lua require('user.conf.hop')
 
 " ultisnips conf ###############################################
 let g:UltiSnipsExpandTrigger="<tab>"

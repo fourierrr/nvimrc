@@ -47,7 +47,7 @@ keymap("v",">",">gv",opts)
 keymap("","<S-down>","7j",opts)
 keymap("","<S-up>","7k",opts)
 keymap("","<C-j>","7j",opts)
-keymap("","<C-k","7k",opts)
+keymap("","<C-k>","7k",opts)
 
 keymap("","R",":w<CR>:source %<CR>",opts)
 keymap("","S",":w<CR>",opts)
