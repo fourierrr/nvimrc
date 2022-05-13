@@ -10,6 +10,7 @@ exec "nohlsearch"
 au BufRead,BufNewFile Dockerfile.* set filetype=dockerfile
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'lewis6991/impatient.nvim'
 " Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -36,7 +37,8 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ahmedkhalf/project.nvim'
-Plug 'voldikss/vim-floaterm'
+" Plug 'voldikss/vim-floaterm'
+Plug 'doums/floaterm.nvim'
 Plug 'gcmt/wildfire.vim'
 Plug 'honza/vim-snippets'
 " Plug 'yegappan/mru'
@@ -47,6 +49,8 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 call plug#end()
 
 
+"inpatient nvim  speed up loading lua module
+lua require('impatient')
 
 
 
@@ -114,6 +118,11 @@ lua << END
 require('gitsigns').setup()
 END
 
+"floaterm
+lua << END
+require('floaterm').setup()
+END
+
 "bufferline conf 
 lua << END
 require "user.conf.bufferline"
@@ -154,8 +163,8 @@ lua << END
 require "user.conf.project"
 END
 
-"vim-floaterm cof ###############################################
-nmap T :FloatermToggle<CR>
+"floaterm cof ###############################################
+nmap T :Fterm<CR>
 
 
 "coc conf    #######################################
