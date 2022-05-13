@@ -39,6 +39,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ahmedkhalf/project.nvim'
 " Plug 'voldikss/vim-floaterm'
 Plug 'doums/floaterm.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'gcmt/wildfire.vim'
 Plug 'honza/vim-snippets'
 " Plug 'yegappan/mru'
@@ -53,6 +54,7 @@ call plug#end()
 lua require('impatient')
 lua require('user.conf.autosave')
 lua require('user.conf.nvim-lastplace')
+lua require('user.conf.indent-blankline')
 
 " ultisnips conf ###############################################
 let g:UltiSnipsExpandTrigger="<tab>"
