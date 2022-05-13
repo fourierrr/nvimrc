@@ -1,88 +1,17 @@
-syntax on
-let mapleader=" "
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set cursorline
-set number
-set relativenumber
 
 
-set termguicolors
-set cursorline
-set wrap
-set showcmd
-set cmdheight=1
-set updatetime=100
-set encoding=UTF-8
-set wildmenu
+lua << END
+require "user.keymaps"
+require "user.options"
+END
 
-filetype on
-filetype indent on
-filetype plugin on
-filetype plugin indent on
-" set mouse=a
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set laststatus=2
-set scrolloff=5
-
-map q <nop>
-map ? <nop>
-map r <nop>
-
-map <S-down> 7<down>
-map <S-up> 7<up>
-nmap <C-d> 7j
-nmap <C-u> 7k
-nmap <C-j> 7j
-nmap <C-k> 7k
-
-"move hole line up or down
-nmap <A-up> <Esc>:m .-2<CR>
-nmap <A-down> <Esc>:m .+1<CR>
-
-"map <LEADER><LEADER> <ESC>/<++><CR>c4l
-map <LEADER>html :%TOhtml<CR>
-
-map <LEADER><up> <C-w>k
-map <LEADER><down> <C-w>j
-map <LEADER><left> <C-w>h
-map <C-h> <C-w>h
-map <LEADER><right> <C-w>l
-map <C-l> <C-w>l
-
-map <LEADER>n :set nu! relativenumber!<CR>:GitGutterToggle<CR>
-
-noremap = nzz
-noremap - Nzz
-noremap <LEADER><CR> :nohlsearch<CR>
-
-inoremap jk <ESC>
-
-"vmode 快速调整代码缩进
-vmap < <gv
-vmap > >gv
-
-
-nmap <leader>d :bdelete<cr>
-nmap <leader>q :q<CR>
-
-" map Q :q<CR>
-map S :w<CR>
-" Note: this has been replaced by plugin vim-floaterm
-" open a terminal in a buttom split windows
-" map T :sp<CR><C-w>j:term<CR>
-map R :source %<CR>
-map ; :
 
 exec "nohlsearch"
 au BufRead,BufNewFile Dockerfile.* set filetype=dockerfile
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -180,70 +109,10 @@ nnoremap <leader>p <cmd>Telescope projects<cr>
 nnoremap mm <cmd>Telescope oldfiles<cr>
 nnoremap <leader>o <cmd>Telescope oldfiles<cr>
 
-
-
-
-
-"fzf conf ###############################################
-" nnoremap <silent><nowait> <LEADER>o :<C-u>FZF<CR> 
-" nnoremap <silent><nowait> <LEADER>f :<C-u>Rg<CR> 
-" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-
-"nerdtree-git-plugin conf #######################################
-"let g:NERDTreeGitStatusIndicatorMapCustom = {
-"                \ 'Modified'  :'✹',
-"                \ 'Staged'    :'✚',
-"                \ 'Untracked' :'✭',
-"                \ 'Renamed'   :'➜',
-"                \ 'Unmerged'  :'═',
-"                \ 'Deleted'   :'✖',
-"                \ 'Dirty'     :'✗',
-"                \ 'Ignored'   :'☒',
-"                \ 'Clean'     :'✔︎',
-"                \ 'Unknown'   :'?',
-"                \ }
-
-""nerdtree conf #################################################
-"" autocmd vimenter * if !argc()|NERDTree|endif
-"nnoremap ff :NERDTreeToggle<CR> 
-"nnoremap fc :NERDTreeFind<CR>
-"let NERDTreeShowHidden=1
-"let g:NERDTreeWinSize = 35
-""let g:NERDTreeDirArrowExpandable = '+'
-""let g:NERDTreeDirArrowCollapsible = '-'
-""let NERDTreeDirArrows = 1
-
-
-"Togglebar conf #######################################
-" nmap tt :TagbarToggle<CR>
-" let g:tagbar_map_showproto = '\'
-" let g:tagbar_type_go = {
-"     \ 'ctagstype' : 'go',
-"     \ 'kinds'     : [
-"         \ 'p:package',
-"         \ 'i:imports:1',
-"         \ 'c:constants',
-"         \ 'v:variables',
-"         \ 't:types',
-"         \ 'n:interfaces',
-"         \ 'w:fields',
-"         \ 'e:embedded',
-"         \ 'm:methods',
-"         \ 'r:constructor',
-"         \ 'f:functions'
-"     \ ],
-"     \ 'sro' : '.',
-"     \ 'kind2scope' : {
-"         \ 't' : 'ctype',
-"         \ 'n' : 'ntype'
-"     \ },
-"     \ 'scope2kind' : {
-"         \ 'ctype' : 't',
-"         \ 'ntype' : 'n'
-"     \ },
-"     \ 'ctagsbin'  : 'gotags',
-"     \ 'ctagsargs' : '-sort -silent'
-" \ }
+"gitsigns 
+lua << END
+require('gitsigns').setup()
+END
 
 "bufferline conf 
 lua << END
