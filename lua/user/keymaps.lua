@@ -33,7 +33,7 @@ keymap("n","<A-down","<Esc>:m .+1<CR>",opts)
 
 -- fastquit and delete buffer
 keymap("n","<leader>q",":q<CR>",opts)
-keymap("n","<leader>d",";bdelete",opts)
+keymap("n","<leader>d",":bdelete<CR>",opts)
 
 keymap("i","jk","<ESC>",opts)
 keymap("i","<C-\\>","<ESC>o",opts)

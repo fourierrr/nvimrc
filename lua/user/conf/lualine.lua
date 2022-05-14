@@ -71,15 +71,20 @@ local location = {
   padding = 0,
 }
 
--- cool function for progress
-local progress = function()
-  local current_line = vim.fn.line(".")
+-- -- cool function for progress
+-- local progress = function()
+--   local current_line = vim.fn.line(".")
+--   local total_lines = vim.fn.line("$")
+--   -- local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
+--   local chars = { "██", "▇▇", "▆▆", "▅▅", "▄▄", "▃▃", "▂▂", "▁▁", " ", }
+--   local line_ratio = current_line / total_lines
+--   local index = math.ceil(line_ratio * #chars)
+--   return chars[index]
+-- end
+
+local progress = function ()
   local total_lines = vim.fn.line("$")
-  -- local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-  local chars = { "██", "▇▇", "▆▆", "▅▅", "▄▄", "▃▃", "▂▂", "▁▁", " ", }
-  local line_ratio = current_line / total_lines
-  local index = math.ceil(line_ratio * #chars)
-  return chars[index]
+  return '%2p%%' .. '| ' .. total_lines .. ' Lines'
 end
 
 local spaces = function()
