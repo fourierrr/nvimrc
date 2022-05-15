@@ -1,5 +1,6 @@
 # ignore evething in this repo except init.vim
 
-plugged
+plugin/packer_compiled.lua
+
 
 
