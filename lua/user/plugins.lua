@@ -113,16 +113,25 @@ return packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'phaazon/hop.nvim'
   use 'nvim-lua/plenary.nvim'
+  use "norcalli/nvim-colorizer.lua" -- show color
+
   use 'nvim-telescope/telescope.nvim'
   use {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
   }
+  use "nvim-telescope/telescope-ui-select.nvim"
+  use "nvim-telescope/telescope-live-grep-raw.nvim"
+  use "MattesGroeger/vim-bookmarks"
+  use "tom-anders/telescope-vim-bookmarks.nvim"
+  use "nvim-telescope/telescope-dap.nvim"
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
   use 'xiyaowong/nvim-transparent'
+  use "kosayoda/nvim-lightbulb" -- code action
+
   use 'goolord/alpha-nvim'
   use 'majutsushi/tagbar'
   use {
@@ -135,14 +144,21 @@ return packer.startup(function(use)
   -- use 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
   -- use 'neoclide/coc.nvim',{ 'do': 'yarn install'  }
   use 'jiangmiao/auto-pairs'
+  
+  -- debug
+  use "ravenxrz/nvim-dap"
+  use "ravenxrz/DAPInstall.nvim" -- help us install several debuggers
+  use "theHamsta/nvim-dap-virtual-text"
+  use "rcarriga/nvim-dap-ui"
   use 'nvim-lualine/lualine.nvim'
   use 'Pocco81/AutoSave.nvim'
+  use "djoshea/vim-autoread"
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
   use 'ahmedkhalf/project.nvim'
   use 'doums/floaterm.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
-  use 'gcmt/wildfire.vim'
+  -- use 'gcmt/wildfire.vim'
   -- use 'honza/vim-snippets'
   use {
     "catppuccin/nvim",
