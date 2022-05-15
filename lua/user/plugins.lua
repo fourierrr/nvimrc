@@ -105,10 +105,11 @@ return packer.startup(function(use)
   }
 
   use "j-hui/fidget.nvim" -- show lsp progress
+  use 'folke/trouble.nvim'
 
   use 'lewis6991/impatient.nvim'
   use 'ethanholz/nvim-lastplace'
-  use 'airblade/vim-gitgutter'
+  -- use 'airblade/vim-gitgutter'
   use 'lewis6991/gitsigns.nvim'
   use 'phaazon/hop.nvim'
   use 'nvim-lua/plenary.nvim'
@@ -130,7 +131,7 @@ return packer.startup(function(use)
   }
   use 'tpope/vim-commentary'
   -- use 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-  use 'SirVer/ultisnips'
+  -- use 'SirVer/ultisnips'
   -- use 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
   -- use 'neoclide/coc.nvim',{ 'do': 'yarn install'  }
   use 'jiangmiao/auto-pairs'
@@ -142,7 +143,7 @@ return packer.startup(function(use)
   use 'doums/floaterm.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'gcmt/wildfire.vim'
-  use 'honza/vim-snippets'
+  -- use 'honza/vim-snippets'
   use {
     "catppuccin/nvim",
     as = "catppuccin",

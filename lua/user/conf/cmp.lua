@@ -138,7 +138,7 @@ require("luasnip.loaders.from_vscode").load({ paths = { -- load custom snippets
   vim.fn.stdpath("config") .. "/my-snippets"
 } }) -- Load snippets from my-snippets folder
 
-cmp_config = {
+Cmp_config = {
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
@@ -201,14 +201,14 @@ cmp_config = {
     },
     duplicates_default = 0,
     format = function(entry, vim_item)
-      local max_width = cmp_config.formatting.max_width
+      local max_width = Cmp_config.formatting.max_width
       if max_width ~= 0 and #vim_item.abbr > max_width then
         vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. "…"
       end
-      vim_item.kind = cmp_config.formatting.kind_icons[vim_item.kind]
-      vim_item.menu = cmp_config.formatting.source_names[entry.source.name]
-      vim_item.dup = cmp_config.formatting.duplicates[entry.source.name]
-          or cmp_config.formatting.duplicates_default
+      vim_item.kind = Cmp_config.formatting.kind_icons[vim_item.kind]
+      vim_item.menu = Cmp_config.formatting.source_names[entry.source.name]
+      vim_item.dup = Cmp_config.formatting.duplicates[entry.source.name]
+          or Cmp_config.formatting.duplicates_default
       return vim_item
     end,
   },
@@ -222,9 +222,9 @@ cmp_config = {
     documentation = cmp.config.window.bordered(),
   },
   sources = {
+    { name = "luasnip" },
     { name = "nvim_lsp" },
     { name = "path" },
-    { name = "luasnip" },
     { name = "cmp_tabnine" },
     { name = "nvim_lua" },
     { name = "buffer" },
@@ -274,7 +274,7 @@ cmp_config = {
     ["<C-p>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.abort(),
     ["<CR>"] = cmp.mapping(function(fallback)
-      if cmp.visible() and cmp.confirm(cmp_config.confirm_opts) then
+      if cmp.visible() and cmp.confirm(Cmp_config.confirm_opts) then
         if jumpable(1) then
           luasnip.jump(1)
         end
@@ -320,4 +320,4 @@ cmp.setup.cmdline(':', {
 vim.cmd("autocmd FileType guihua lua require('cmp').setup.buffer { enabled = false }")
 vim.cmd("autocmd FileType guihua_rust lua require('cmp').setup.buffer { enabled = false }")
 
-cmp.setup(cmp_config)
+cmp.setup(Cmp_config)

@@ -74,6 +74,8 @@ keymap("n","<leader>p","<cmd>Telescope projects<cr>",opts)
 keymap("n","<leader>o","<cmd>Telescope oldfiles<cr>",opts)
 keymap("n","mm","<cmd>Telescope oldfiles<cr>",opts)
 
+-- trouble keymap
+keymap("n","<leader>u","<cmd>TroubleToggle<CR>",opts)
 
 -- bufferline keymap
 -- nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
