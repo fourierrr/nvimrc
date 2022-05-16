@@ -72,7 +72,18 @@ keymap("n","<leader>g","<cmd>Telescope live_grep<cr>",opts)
 keymap("n","<leader>b","<cmd>Telescope buffers<cr>",opts)
 keymap("n","<leader>p","<cmd>Telescope projects<cr>",opts)
 keymap("n","<leader>o","<cmd>Telescope oldfiles<cr>",opts)
-keymap("n","mm","<cmd>Telescope oldfiles<cr>",opts)
+-- keymap("n","mm","<cmd>Telescope oldfiles<cr>",opts)
+-- bookmark's
+-- mm is default bookmarktoggle
+keymap("n", "ma", "<cmd>Telescope vim_bookmarks current_file<cr>", opts)
+keymap("n", "mA", "<cmd>Telescope vim_bookmarks all<cr>", opts)
+
+-- lsp keymap
+keymap("n","gr","<cmd>Telescope lsp_references<cr>",opts)
+keymap("n","gd","<cmd>Telescope lsp_definition<cr>",opts)
+keymap("n","gD","<cmd>Telescope lsp_declaration<cr>",opts)
+keymap("n","gi","<cmd>Telescope lsp_implementation<cr>",opts)
+keymap("n","ge","<cmd>Telescope lsp_diagnostics<cr>",opts)
 
 -- trouble keymap
 keymap("n","<leader>u","<cmd>TroubleToggle<CR>",opts)

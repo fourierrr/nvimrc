@@ -106,6 +106,8 @@ return packer.startup(function(use)
 
   use "j-hui/fidget.nvim" -- show lsp progress
   use 'folke/trouble.nvim'
+  use "folke/todo-comments.nvim" -- todo comments
+
 
   use 'lewis6991/impatient.nvim'
   use 'ethanholz/nvim-lastplace'
@@ -144,7 +146,7 @@ return packer.startup(function(use)
   -- use 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
   -- use 'neoclide/coc.nvim',{ 'do': 'yarn install'  }
   use 'jiangmiao/auto-pairs'
-  
+
   -- debug
   use "ravenxrz/nvim-dap"
   use "ravenxrz/DAPInstall.nvim" -- help us install several debuggers

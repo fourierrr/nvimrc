@@ -8,6 +8,8 @@ local options = {
   smartcase = true,
   number = true,
   relativenumber = true,
+  cursorline = true, -- highlight the current line
+
 
   termguicolors = true,
   wrap = true,
