@@ -1,6 +1,5 @@
-# ignore evething in this repo except init.vim
 
 plugin/packer_compiled.lua
-
+lua/user/conf/cmp.lua.bak
 
 
