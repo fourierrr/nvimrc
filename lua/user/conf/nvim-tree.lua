@@ -93,7 +93,8 @@ nvim_tree.setup({
         -- { key = "h", action = "close_node" },
         { key = "v", action = "vsplit" },
         -- { key = "O", action = "cd" },
-        { key="?",action="toggle_help" }
+        { key="?",action="toggle_help" },
+        {key="f",action=""}
       },
     },
   },
