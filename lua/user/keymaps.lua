@@ -85,6 +85,13 @@ keymap("n","gD","<cmd>Telescope lsp_declaration<cr>",opts)
 keymap("n","gi","<cmd>Telescope lsp_implementation<cr>",opts)
 keymap("n","ge","<cmd>Telescope lsp_diagnostics<cr>",opts)
 
+
+-- hop kemap
+vim.api.nvim_set_keymap('n', '<leader>w', "<cmd>HopWord<cr>", {})
+vim.api.nvim_set_keymap('n', '<leader><leader>j', "<cmd>HopLine<cr>", {})
+vim.api.nvim_set_keymap('n', '<leader><leader>k', "<cmd>HopLine<cr>", {})
+vim.api.nvim_set_keymap('n', '<leader><leader>s', "<cmd>HopChar1<cr>", {})
+
 -- trouble keymap
 keymap("n","<leader>u","<cmd>TroubleToggle<CR>",opts)
 
