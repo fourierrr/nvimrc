@@ -82,7 +82,7 @@ local location = {
 --   return chars[index]
 -- end
 
-local progress = function ()
+local progress = function()
   local total_lines = vim.fn.line("$")
   return '%2p%%' .. '| ' .. total_lines .. ' Lines'
 end
@@ -121,6 +121,7 @@ lualine.setup({
     lualine_y = {},
     lualine_z = {},
   },
-  tabline = {},
+  tabline = {
+  },
   extensions = {},
 })
