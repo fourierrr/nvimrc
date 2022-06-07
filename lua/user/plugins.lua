@@ -107,7 +107,8 @@ return packer.startup(function(use)
   use "j-hui/fidget.nvim" -- show lsp progress
   use 'folke/trouble.nvim'
   use "folke/todo-comments.nvim" -- todo comments
-
+  use 'ray-x/go.nvim'
+  use 'ray-x/guihua.lua' -- recommanded if need floating window support
 
   use 'lewis6991/impatient.nvim'
   use 'ethanholz/nvim-lastplace'

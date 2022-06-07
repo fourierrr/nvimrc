@@ -80,8 +80,9 @@ keymap("n", "mA", "<cmd>Telescope vim_bookmarks all<cr>", opts)
 
 -- lsp keymap
 keymap("n","gr","<cmd>Telescope lsp_references<cr>",opts)
-keymap("n","gd","<cmd>Telescope lsp_definition<cr>",opts)
-keymap("n","gD","<cmd>Telescope lsp_declaration<cr>",opts)
+keymap("n","gd","<cmd>Telescope lsp_definitions<cr>",opts)
+  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+keymap("n","gD","<cmd>lua vim.lsp.buf.declaration()<cr>",opts)
 keymap("n","gi","<cmd>Telescope lsp_implementation<cr>",opts)
 keymap("n","ge","<cmd>Telescope lsp_diagnostics<cr>",opts)
 

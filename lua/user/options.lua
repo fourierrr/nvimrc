@@ -36,6 +36,8 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+vim.cmd ("hi comment ctermfg=14 gui=italic guifg=#909399")
+
 
 --  增加连词符
 vim.cmd [[set iskeyword+=-]]
