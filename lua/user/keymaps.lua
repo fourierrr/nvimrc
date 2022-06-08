@@ -37,6 +37,10 @@ keymap("n","<leader>d",":bdelete<CR>",opts)
 
 keymap("i","jk","<ESC>",opts)
 keymap("i","<C-\\>","<ESC>o",opts)
+keymap("i","<C-j>","<down>",opts)
+keymap("i","<C-k>","<up>",opts)
+-- keymap("i","<C-h>","<left>",opts)
+-- keymap("i","<C-l>","<right>",opts)
 
 -- visual_mode indent change >  and <
 keymap("v","<","<gv",opts)
@@ -46,8 +50,6 @@ keymap("v",">",">gv",opts)
 -- accelarate j k
 keymap("","<S-down>","7j",opts)
 keymap("","<S-up>","7k",opts)
-keymap("","<C-j>","7j",opts)
-keymap("","<C-k>","7k",opts)
 
 keymap("","R",":w<CR>:source %<CR>",opts)
 keymap("","S",":w<CR>",opts)
