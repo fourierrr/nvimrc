@@ -40,11 +40,15 @@ keymap("i","<C-\\>","<ESC>o",opts)
 keymap("i","<C-j>","<down>",opts)
 keymap("i","<C-k>","<up>",opts)
 -- keymap("i","<C-h>","<left>",opts)
--- keymap("i","<C-l>","<right>",opts)
+-- keymap("i","<C-l>","<Esc>A",opts)
 
 -- visual_mode indent change >  and <
 keymap("v","<","<gv",opts)
 keymap("v",">",">gv",opts)
+
+-- adjust up and down
+keymap("","<c-u>","8k",opts)
+keymap("","<c-d>","8j",opts)
 
 
 -- accelarate j k
@@ -62,10 +66,10 @@ keymap("","-","Nzz",opts)
 -- toggle show number and gitgutter
 keymap("","<leader>n",":set nu! relativenumber!<CR>:GitGutterToggle<CR>",opts)
 
--- floaterm
+-- floaterm, T to open, and <A-q> to quit
 keymap("n","T",":Fterm<CR>",opts)
 
--- nvim-tree kemap
+-- nvim-tree keymap
 keymap("n","ff",":NvimTreeToggle<CR>",opts)
 
 -- telescope keymap
@@ -83,13 +87,12 @@ keymap("n", "mA", "<cmd>Telescope vim_bookmarks all<cr>", opts)
 -- lsp keymap
 keymap("n","gr","<cmd>Telescope lsp_references<cr>",opts)
 keymap("n","gd","<cmd>Telescope lsp_definitions<cr>",opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 keymap("n","gD","<cmd>lua vim.lsp.buf.declaration()<cr>",opts)
-keymap("n","gi","<cmd>Telescope lsp_implementation<cr>",opts)
-keymap("n","ge","<cmd>Telescope lsp_diagnostics<cr>",opts)
+keymap("n","gi","<cmd>Telescope lsp_implementations<cr>",opts)
+keymap("n","ge","<cmd>Telescope diagnostics<cr>",opts)
 
 
--- hop kemap
+-- hop keymap
 vim.api.nvim_set_keymap('n', '<leader>w', "<cmd>HopWord<cr>", {})
 vim.api.nvim_set_keymap('n', '<leader><leader>j', "<cmd>HopLine<cr>", {})
 vim.api.nvim_set_keymap('n', '<leader><leader>k', "<cmd>HopLine<cr>", {})
