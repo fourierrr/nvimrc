@@ -33,7 +33,7 @@ keymap("n","<A-down>","<Esc>:m .+1<CR>",opts)
 
 -- fastquit and delete buffer
 keymap("n","<leader>q",":q<CR>",opts)
-keymap("n","<leader>d",":bdelete<CR>",opts)
+keymap("n","<leader>d",":NvimTreeClose<CR>:bdelete<CR>",opts)
 
 keymap("i","jk","<ESC>",opts)
 keymap("i","<C-\\>","<ESC>o",opts)
@@ -45,6 +45,8 @@ keymap("i","<C-k>","<up>",opts)
 -- visual_mode indent change >  and <
 keymap("v","<","<gv",opts)
 keymap("v",">",">gv",opts)
+keymap("v","\\","$",opts)
+keymap("n","\\","$",opts)
 
 -- adjust up and down
 keymap("","<c-u>","8k",opts)
