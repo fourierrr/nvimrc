@@ -10,7 +10,7 @@ end
 
 local diagnostics = {
   "diagnostics",
-  sources = { "coc" },
+  sources = { "nvim_lsp" },
   sections = { "error", "warn" },
   symbols = { error = " ", warn = " " },
   colored = false,
