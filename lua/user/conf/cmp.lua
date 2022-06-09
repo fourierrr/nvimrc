@@ -90,7 +90,8 @@ Cmp_config = {
         vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. "…"
       end
       vim_item.kind = Cmp_config.formatting.kind_icons[vim_item.kind]
-      vim_item.menu = Cmp_config.formatting.source_names[entry.source.name]
+      -- vim_item.menu = Cmp_config.formatting.source_names[entry.source.name]
+      vim_item.menu = entry:get_completion_item().detail
       vim_item.dup = Cmp_config.formatting.duplicates[entry.source.name]
           or Cmp_config.formatting.duplicates_default
       return vim_item
@@ -106,12 +107,12 @@ Cmp_config = {
     documentation = cmp.config.window.bordered(),
   },
   sources = {
-    { name = "luasnip" },
     { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
     { name = "path" },
     { name = "cmp_tabnine" },
     { name = "nvim_lua" },
-    { name = "buffer" },
     { name = "spell" },
     { name = "calc" },
     { name = "emoji" },

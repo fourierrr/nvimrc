@@ -109,6 +109,7 @@ return packer.startup(function(use)
   use "folke/todo-comments.nvim" -- todo comments
   use 'ray-x/go.nvim'
   use 'ray-x/guihua.lua' -- recommanded if need floating window support
+  use 'ray-x/lsp_signature.nvim'
 
   use 'lewis6991/impatient.nvim'
   use 'ethanholz/nvim-lastplace'
