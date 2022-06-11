@@ -27,8 +27,14 @@ vim.cmd [[
     autocmd BufRead * autocmd BufWinEnter * ++once normal! zx
   augroup end
 
+  augroup _oscYank
+    autocmd!
+    autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif
+  augroup end
+
 ]]
 
 -- Run gofmt + goimport on save
 vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+
 

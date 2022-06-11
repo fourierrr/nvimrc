@@ -23,7 +23,7 @@ local fn = vim.fn
 --   augroup end
 -- ]]
 
--- Use a protected call so we don't error out on first use
+-- Use a protected call so we don"t error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   vim.notify("packer not found!")
@@ -77,8 +77,8 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
 
-  use 'wbthomason/packer.nvim'
-  use 'neovim/nvim-lspconfig' -- Collection of configurations for the built-in LSP client
+  use "wbthomason/packer.nvim"
+  use "neovim/nvim-lspconfig" -- Collection of configurations for the built-in LSP client
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use {
     "hrsh7th/nvim-cmp",
@@ -88,7 +88,7 @@ return packer.startup(function(use)
       "onsails/lspkind-nvim", --美化自动完成提示信息
       "hrsh7th/cmp-buffer", --从buffer中智能提示
       "hrsh7th/cmp-nvim-lua", --nvim-cmp source for neovim Lua API.
-      'hrsh7th/cmp-cmdline',
+      "hrsh7th/cmp-cmdline",
       -- "octaltree/cmp-look", --用于完成英语单词
       "hrsh7th/cmp-path", --自动提示硬盘上的文件
       -- "hrsh7th/cmp-calc", --输入数学算式（如1+1=）自动计算
@@ -105,21 +105,21 @@ return packer.startup(function(use)
   }
 
   use "j-hui/fidget.nvim" -- show lsp progress
-  use 'folke/trouble.nvim'
+  use "folke/trouble.nvim"
   use "folke/todo-comments.nvim" -- todo comments
-  use 'ray-x/go.nvim'
-  use 'ray-x/guihua.lua' -- recommanded if need floating window support
-  use 'ray-x/lsp_signature.nvim'
+  use "ray-x/go.nvim"
+  use "ray-x/guihua.lua" -- recommanded if need floating window support
+  use "ray-x/lsp_signature.nvim"
 
-  use 'lewis6991/impatient.nvim'
-  use 'ethanholz/nvim-lastplace'
-  -- use 'airblade/vim-gitgutter'
-  use 'lewis6991/gitsigns.nvim'
-  use 'phaazon/hop.nvim'
-  use 'nvim-lua/plenary.nvim'
+  use "lewis6991/impatient.nvim"
+  use "ethanholz/nvim-lastplace"
+  -- use "airblade/vim-gitgutter"
+  use "lewis6991/gitsigns.nvim"
+  use "phaazon/hop.nvim"
+  use "nvim-lua/plenary.nvim"
   use "norcalli/nvim-colorizer.lua" -- show color
 
-  use 'nvim-telescope/telescope.nvim'
+  use "nvim-telescope/telescope.nvim"
   use {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
@@ -133,37 +133,38 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
-  use 'xiyaowong/nvim-transparent'
+  use "xiyaowong/nvim-transparent"
   use "kosayoda/nvim-lightbulb" -- code action
 
-  use 'goolord/alpha-nvim'
-  use 'majutsushi/tagbar'
+  use "goolord/alpha-nvim"
+  use "majutsushi/tagbar"
   use {
     "akinsho/bufferline.nvim", -- tab
     tag = "v2.*",
   }
-  use 'tpope/vim-commentary'
-  -- use 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-  -- use 'SirVer/ultisnips'
-  -- use 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-  -- use 'neoclide/coc.nvim',{ 'do': 'yarn install'  }
-  use 'jiangmiao/auto-pairs'
+  use "tpope/vim-commentary"
+  -- use "fatih/vim-go", { "do": ":GoInstallBinaries" }
+  -- use "SirVer/ultisnips"
+  -- use "iamcco/markdown-preview.nvim", { "do": "cd app && yarn install"  }
+  -- use "neoclide/coc.nvim",{ "do": "yarn install"  }
+  use "jiangmiao/auto-pairs"
 
   -- debug
   use "ravenxrz/nvim-dap"
   use "ravenxrz/DAPInstall.nvim" -- help us install several debuggers
   use "theHamsta/nvim-dap-virtual-text"
   use "rcarriga/nvim-dap-ui"
-  use 'nvim-lualine/lualine.nvim'
-  use 'Pocco81/AutoSave.nvim'
+  use "nvim-lualine/lualine.nvim"
+  use "Pocco81/AutoSave.nvim"
   use "djoshea/vim-autoread"
-  use 'kyazdani42/nvim-web-devicons'
-  use 'kyazdani42/nvim-tree.lua'
-  use 'ahmedkhalf/project.nvim'
-  use 'doums/floaterm.nvim'
-  use 'lukas-reineke/indent-blankline.nvim'
-  -- use 'gcmt/wildfire.vim'
-  -- use 'honza/vim-snippets'
+  use "ojroques/vim-oscyank" -- in ssh, vim in remote machaine ,yank to local macOS
+  use "kyazdani42/nvim-web-devicons"
+  use "kyazdani42/nvim-tree.lua"
+  use "ahmedkhalf/project.nvim"
+  use "doums/floaterm.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
+  -- use "gcmt/wildfire.vim"
+  -- use "honza/vim-snippets"
   use {
     "catppuccin/nvim",
     as = "catppuccin",
