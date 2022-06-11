@@ -15,11 +15,11 @@ todo_comments.setup(
                 alt = {"FIXME", "BUG", "FIXIT", "ISSUE", "!"}
             },
             -- TODO = {icon = " ", color = "#2563EB"},
-            TODO = {icon = " ", color = "info"},
-            HACK = {icon = " ", color = "#7C3AED"},
+            TODO = {icon = " ", color = "info", alt = {"todo"}},
+            HACK = {icon = " ", color = "#7C3AED",alt = {"hack"}},
             WARN = {icon = " ", color = "#FBBF24", alt = {"WARNING", "XXX"}},
             PERF = {icon = " ", color = "#FC9868", alt = {"OPTIM", "PERFORMANCE", "OPTIMIZE"}},
-            NOTE = {icon = " ", color = "#10B981", alt = {"INFO"}}
+            NOTE = {icon = " ", color = "#10B981", alt = {"INFO","note"}}
         }
     }
 )
