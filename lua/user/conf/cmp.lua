@@ -120,8 +120,10 @@ Cmp_config = {
     { name = "crates" },
   },
   mapping = cmp.mapping.preset.insert {
-    ["<C-k>"] = cmp.mapping.select_prev_item(),
-    ["<C-j>"] = cmp.mapping.select_next_item(),
+    -- ["<C-k>"] = cmp.mapping.select_prev_item(),
+    -- ["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+    ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
@@ -129,7 +131,7 @@ Cmp_config = {
 
     ["<C-p>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { "i", "c" }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<CR>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), { "i","c"}), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     -- ['<Tab>'] = cmp.mapping.confirm({ select = true }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       -- vim.cmd(":echo starttab <CR> ")
@@ -158,12 +160,12 @@ Cmp_config = {
   },
 }
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
-})
+-- cmp.setup.cmdline('/', {
+--   mapping = cmp.mapping.preset.cmdline(),
+--   sources = {
+--     { name = 'buffer' }
+--   }
+-- })
 
 cmp.setup.cmdline('?', {
   mapping = cmp.mapping.preset.cmdline(),
