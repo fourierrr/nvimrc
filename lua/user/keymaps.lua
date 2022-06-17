@@ -96,7 +96,7 @@ keymap("n","ge","<cmd>Telescope diagnostics<cr>",opts)
 
 -- hop keymap
 vim.api.nvim_set_keymap('n', '<leader>w', "<cmd>HopWord<cr>", {})
-vim.api.nvim_set_keymap('n', '<leader><leader>j', "<cmd>HopLine<cr>", {})
+vim.api.nvim_set_keymap('n', '<leader>j', "<cmd>HopWord<cr>", {})
 vim.api.nvim_set_keymap('n', '<leader><leader>k', "<cmd>HopLine<cr>", {})
 vim.api.nvim_set_keymap('n', '<leader><leader>s', "<cmd>HopChar1<cr>", {})
 
