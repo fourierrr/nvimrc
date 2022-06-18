@@ -125,6 +125,8 @@ local buttons = {
     { type = "padding", val = 1 },
     button({ shortcut = 'c', hl = { { 'DevIconPy', 2, 3 } } }, "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
     { type = "padding", val = 1 },
+    button({ shortcut = 'r', hl = { { 'DevIconJs', 2, 3 } } }, "  Plugin Sync", ":PackerSync <CR>"),
+    { type = "padding", val = 1 },
     -- dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
     button({ shortcut = 'q', hl = { { 'DevIconPdf', 2, 3 } } }, "  Quit Neovim", ":qa<CR>"),
     { type = "padding", val = 1 },

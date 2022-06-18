@@ -68,8 +68,9 @@ keymap("","-","Nzz",opts)
 -- toggle show number and gitgutter
 keymap("","<leader>n",":set nu! relativenumber!<CR>:GitGutterToggle<CR>",opts)
 
--- floaterm, T to open, and <A-q> to quit
-keymap("n","T",":Fterm<CR>",opts)
+-- floaterm, T to open, and <C-d> to quit
+keymap("n","T",":ToggleTerm<CR>",opts)
+keymap("n","<leader>t",":lua _LAZYGIT_TOGGLE()<CR>",opts)
 
 -- nvim-tree keymap
 keymap("n","ff",":NvimTreeToggle<CR>",opts)

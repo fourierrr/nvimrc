@@ -161,7 +161,10 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "ahmedkhalf/project.nvim"
-  use "doums/floaterm.nvim"
+  -- use "doums/floaterm.nvim"
+  use { "akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
+    require("toggleterm").setup()
+  end }
   use "lukas-reineke/indent-blankline.nvim"
   -- use "gcmt/wildfire.vim"
   -- use "honza/vim-snippets"
