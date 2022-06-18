@@ -33,7 +33,8 @@ keymap("n","<A-down>","<Esc>:m .+1<CR>",opts)
 
 -- fastquit and delete buffer
 keymap("n","<leader>q",":q<CR>",opts)
-keymap("n","<leader>d",":NvimTreeClose<CR>:bdelete<CR>",opts)
+-- keymap("n","<leader>d",":NvimTreeClose<CR>:bdelete<CR>",opts)
+keymap("n","<leader>d",":Bdelete<CR>",opts)
 
 keymap("i","jk","<ESC>",opts)
 keymap("i","<C-\\>","<ESC>o",opts)

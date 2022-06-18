@@ -154,6 +154,7 @@ return packer.startup(function(use)
   use "ravenxrz/DAPInstall.nvim" -- help us install several debuggers
   use "theHamsta/nvim-dap-virtual-text"
   use "rcarriga/nvim-dap-ui"
+
   use "nvim-lualine/lualine.nvim"
   use "Pocco81/AutoSave.nvim"
   use "djoshea/vim-autoread"
@@ -161,6 +162,7 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "ahmedkhalf/project.nvim"
+  use 'famiu/bufdelete.nvim'
   -- use "doums/floaterm.nvim"
   use { "akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
     require("toggleterm").setup()
