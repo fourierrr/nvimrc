@@ -142,7 +142,9 @@ return packer.startup(function(use)
     "akinsho/bufferline.nvim", -- tab
     tag = "v2.*",
   }
-  use "tpope/vim-commentary"
+  -- use "tpope/vim-commentary"
+  use 'numToStr/Comment.nvim'
+
   -- use "fatih/vim-go", { "do": ":GoInstallBinaries" }
   -- use "SirVer/ultisnips"
   -- use "iamcco/markdown-preview.nvim", { "do": "cd app && yarn install"  }
