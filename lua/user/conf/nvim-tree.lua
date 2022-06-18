@@ -38,26 +38,28 @@
 --
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
-vim.g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-  git = {
-    unstaged = "",
-    staged = "S",
-    unmerged = "",
-    renamed = "➜",
-    deleted = "",
-    untracked = "U",
-    ignored = "◌",
-  },
-  folder = {
-    default = "",
-    open = "",
-    empty = "",
-    empty_open = "",
-    symlink = "",
-  },
-}
+
+
+-- vim.g.nvim_tree_icons = {
+--   default = "",
+--   symlink = "",
+--   git = {
+--     unstaged = "",
+--     staged = "S",
+--     unmerged = "",
+--     renamed = "➜",
+--     deleted = "",
+--     untracked = "U",
+--     ignored = "◌",
+--   },
+--   folder = {
+--     default = "",
+--     open = "",
+--     empty = "",
+--     empty_open = "",
+--     symlink = "",
+--   },
+-- }
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
@@ -93,22 +95,68 @@ nvim_tree.setup({
         -- { key = "h", action = "close_node" },
         { key = "v", action = "vsplit" },
         -- { key = "O", action = "cd" },
-        { key="?",action="toggle_help" },
-        {key="f",action=""}
+        { key = "?", action = "toggle_help" },
+        { key = "f", action = "" }
       },
     },
   },
   renderer = {
+    highlight_git = true,
+    highlight_opened_files = "none",
     indent_markers = {
-      enable = false,
+      enable = true,
       icons = {
         corner = "└ ",
         edge = "│ ",
         none = "  ",
       },
     },
+    -- icons = {
+    --   webdev_colors = true,
+    -- },
     icons = {
       webdev_colors = true,
+      git_placement = "before",
+      padding = " ",
+      symlink_arrow = " ➛ ",
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = false,
+        git = true,
+      },
+      glyphs = {
+        default = "",
+        symlink = "",
+        folder = {
+          arrow_closed = "",
+          arrow_open = "",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
+        },
+        git = {
+          unstaged = "✗",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "★",
+          deleted = "",
+          ignored = "◌",
+        },
+        --   git = {
+        --     unstaged = "",
+        --     staged = "S",
+        --     unmerged = "",
+        --     renamed = "➜",
+        --     deleted = "",
+        --     untracked = "U",
+        --     ignored = "◌",
+        --   },
+      },
     },
   },
   hijack_directories = {
