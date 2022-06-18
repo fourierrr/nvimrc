@@ -66,6 +66,8 @@ keymap("","<leader><CR>",":nohlsearch<CR>",opts)
 keymap("","=","nzz",opts)
 keymap("","-","Nzz",opts)
 
+keymap("","<f2>",":TransparentToggle<CR>",opts)
+
 -- toggle show number and gitgutter
 keymap("","<leader>n",":set nu! relativenumber!<CR>:GitGutterToggle<CR>",opts)
 

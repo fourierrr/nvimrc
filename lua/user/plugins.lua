@@ -162,6 +162,9 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "ahmedkhalf/project.nvim"
+  use 'karb94/neoscroll.nvim'
+  use "petertriho/nvim-scrollbar"
+  use 'kevinhwang91/nvim-hlslens'
   use 'famiu/bufdelete.nvim'
   -- use "doums/floaterm.nvim"
   use { "akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
