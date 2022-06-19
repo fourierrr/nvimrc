@@ -28,7 +28,8 @@ lspsaga.setup { -- defaults ...
         scroll_up = "<C-u>",
     },
     code_action_keys = {
-        quit = "q",
+        -- quit = "q",
+        quit = "<C-c>",
         exec = "<CR>",
     },
     rename_action_keys = {

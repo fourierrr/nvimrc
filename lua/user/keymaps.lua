@@ -52,7 +52,8 @@ keymap("n","\\","$",opts)
 -- adjust up and down
 keymap("","<c-u>","8k",opts)
 keymap("","<c-d>","8j",opts)
-
+keymap("n","<c-f>","<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>",opts)
+keymap("n","<c-b>","<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>",opts)
 
 -- accelarate j k
 keymap("","<S-down>","7j",opts)
