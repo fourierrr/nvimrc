@@ -79,6 +79,7 @@ return packer.startup(function(use)
 
   use "wbthomason/packer.nvim"
   use "neovim/nvim-lspconfig" -- Collection of configurations for the built-in LSP client
+  use "tami5/lspsaga.nvim"
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use {
     "hrsh7th/nvim-cmp",
