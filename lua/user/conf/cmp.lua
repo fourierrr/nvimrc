@@ -37,7 +37,7 @@ Cmp_config = {
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
-    max_width = 0,
+    max_width = 50,
     kind_icons = {
       Class = " ",
       Color = " ",
