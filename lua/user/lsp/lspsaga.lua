@@ -38,7 +38,7 @@ lspsaga.setup { -- defaults ...
     },
     definition_preview_icon = "  ",
     border_style = "single",
-    rename_prompt_prefix = "➤",
+    rename_prompt_prefix = "Rename ➤",
     rename_output_qflist = {
         enable = false,
         auto_open_qflist = false,
