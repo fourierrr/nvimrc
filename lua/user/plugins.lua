@@ -138,7 +138,8 @@ return packer.startup(function(use)
   use "kosayoda/nvim-lightbulb" -- code action
 
   use "goolord/alpha-nvim"
-  use "majutsushi/tagbar"
+  -- use "majutsushi/tagbar"
+  use 'simrat39/symbols-outline.nvim'
   use {
     "akinsho/bufferline.nvim", -- tab
     tag = "v2.*",

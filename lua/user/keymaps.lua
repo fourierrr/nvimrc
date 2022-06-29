@@ -36,6 +36,10 @@ keymap("n","<leader>q",":q<CR>",opts)
 -- keymap("n","<leader>d",":NvimTreeClose<CR>:bdelete<CR>",opts)
 keymap("n","<leader>d",":Bdelete<CR>",opts)
 
+
+-- tagbar SymbolsOutline toggle
+keymap("n","tt",":SymbolsOutline<CR>",opts)
+
 keymap("i","jk","<ESC>",opts)
 keymap("i","<C-\\>","<ESC>o",opts)
 keymap("i","<C-j>","<down>",opts)
