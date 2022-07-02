@@ -99,7 +99,7 @@ keymap("n", "mA", "<cmd>Telescope vim_bookmarks all<cr>", opts)
 keymap("n","gr","<cmd>Telescope lsp_references<cr>",opts)
 keymap("n","gd","<cmd>Telescope lsp_definitions<cr>",opts)
 keymap("n","gD","<cmd>lua vim.lsp.buf.declaration()<cr>",opts)
-keymap("n","gi","<cmd>Telescope lsp_implementations<cr>",opts)
+keymap("n","gI","<cmd>Telescope lsp_implementations<cr>",opts)
 keymap("n","ge","<cmd>Telescope diagnostics<cr>",opts)
 
 
