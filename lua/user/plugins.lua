@@ -154,10 +154,20 @@ return packer.startup(function(use)
   use "jiangmiao/auto-pairs"
 
   -- debug
-  use "ravenxrz/nvim-dap"
   use "ravenxrz/DAPInstall.nvim" -- help us install several debuggers
+  use {
+    "ravenxrz/nvim-dap",
+    -- commit = "f9480362549e2b50a8616fe4530deaabbc4f889b",
+  }
   use "theHamsta/nvim-dap-virtual-text"
   use "rcarriga/nvim-dap-ui"
+  -- use "mfussenegger/nvim-dap-python"    -- debug python
+  -- use { "leoluz/nvim-dap-go", module = "dap-go" } -- debug golang
+  use { "jbyuki/one-small-step-for-vimkind", module = "osv" } -- debug any Lua code running in a Neovim instance
+  use {
+    "sakhnik/nvim-gdb",
+    run = "./install.sh"
+  }
 
   use "nvim-lualine/lualine.nvim"
   use "Pocco81/AutoSave.nvim"
@@ -166,7 +176,7 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "ahmedkhalf/project.nvim"
-  use 'karb94/neoscroll.nvim'
+  -- use 'karb94/neoscroll.nvim'
   use "petertriho/nvim-scrollbar"
   use 'kevinhwang91/nvim-hlslens'
   use 'famiu/bufdelete.nvim'
