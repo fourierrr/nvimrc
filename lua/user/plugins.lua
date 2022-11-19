@@ -140,10 +140,7 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   -- use "majutsushi/tagbar"
   use 'simrat39/symbols-outline.nvim'
-  use {
-    "akinsho/bufferline.nvim", -- tab
-    tag = "v2.*",
-  }
+  use "akinsho/bufferline.nvim" -- tab
   -- use "tpope/vim-commentary"
   use 'numToStr/Comment.nvim'
 
