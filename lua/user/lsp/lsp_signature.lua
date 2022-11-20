@@ -50,8 +50,15 @@
 }
 
 -- recommended:
-require'lsp_signature'.setup(cfg) -- no need to specify bufnr if you don't use toggle_key
+-- require'lsp_signature'.setup(cfg) -- no need to specify bufnr if you don't use toggle_key
 
+local status_ok, lsp_signature = pcall(require, "lsp_signature")
+if not status_ok then
+  vim.notify("lsp_signature not found!")
+  return
+end
+
+lsp_signature.setup(cfg)
 -- You can also do this inside lsp on_attach
 -- note: on_attach deprecated
 -- require'lsp_signature'.on_attach(cfg, bufnr) -- no need to specify bufnr if you don't use toggle_key

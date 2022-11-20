@@ -167,7 +167,7 @@ return packer.startup(function(use)
   }
 
   use "nvim-lualine/lualine.nvim"
-  use "Pocco81/AutoSave.nvim"
+  use "pocco81/auto-save.nvim"
   use "djoshea/vim-autoread"
   use "ojroques/vim-oscyank" -- in ssh, vim in remote machaine ,yank to local macOS
   use "kyazdani42/nvim-web-devicons"
