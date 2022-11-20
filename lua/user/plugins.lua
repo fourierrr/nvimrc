@@ -178,9 +178,7 @@ return packer.startup(function(use)
   use 'kevinhwang91/nvim-hlslens'
   use 'famiu/bufdelete.nvim'
   -- use "doums/floaterm.nvim"
-  use { "akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
-    require("toggleterm").setup()
-  end }
+  use "akinsho/toggleterm.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   -- use "gcmt/wildfire.vim"
   -- use "honza/vim-snippets"
