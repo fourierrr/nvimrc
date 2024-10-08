@@ -21,13 +21,20 @@ map("i", "jk", "<ESC>", opts)
 map("n", "<leader>q", ":q<CR>", opts)
 
 -- telescope keymap
-map("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-map("n", "<leader>t", "<cmd>Telescope live_grep<cr>", opts)
-map("n", "<leader>p", "<cmd>Telescope projects<cr>", opts)
-map("n", "<leader>o", "<cmd>Telescope oldfiles<cr>", opts)
-map("n", "<leader>sk", "<cmd>Telescope keymaps<cr>", opts)
+map("n", "<leader>f", LazyVim.pick("files"), opts)
+map("n", "<leader>t", LazyVim.pick("live_grep"), opts)
+map("n", "<leader>o", LazyVim.pick("oldfiles"), opts)
+map("n", "<leader>sk", LazyVim.pick("keymaps"), opts)
+-- map("n", "<leader>sk", "<cmd>Telescope keymaps<cr>", opts)
+-- map("n", "<leader>p", "<cmd>Telescope projects<cr>", opts)
+-- map("n", "<leader>o", "<cmd>Telescope oldfiles<cr>", opts)
+-- map("n", "ge", LazyVim.pick("diagnostics"), opts)
 map("n", "ge", "<cmd>Telescope diagnostics<cr>", opts)
 map("n", "gE", "<cmd>lua vim.diagnostic.open_float(0, { scope = 'line', border = 'rounded' })<CR>", opts)
+
+map("n", "<leader>j", ":HopWord<cr>", opts)
+
+map("n", "gh", vim.lsp.buf.hover, opts)
 
 ----------------------------------
 ----------------------------------
