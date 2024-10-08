@@ -34,6 +34,15 @@ map("n", "gE", "<cmd>lua vim.diagnostic.open_float(0, { scope = 'line', border =
 
 map("n", "<leader>j", ":HopWord<cr>", opts)
 
+-- dap
+map("n", "<F9>", "<cmd>lua require'dap'.run_last()<cr>", opts)
+map("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>", opts)
+map("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
+map("n", "<F6>", "<cmd>lua require'dap'.stop_over()<cr>", opts)
+map("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opts)
+map("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
+map("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+
 map("n", "gh", vim.lsp.buf.hover, opts)
 
 ----------------------------------
