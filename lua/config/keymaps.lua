@@ -16,7 +16,7 @@ local mymap = vim.keymap.set
 
 -- rename function
 -- need set remap = true !
-vim.keymap.set('n', '<leader>rn', '<leader>cr', { remap = true })
+vim.keymap.set("n", "<leader>rn", "<leader>cr", { remap = true })
 
 mymap("i", "jk", "<ESC>", opts)
 -- leader q for quit
@@ -27,11 +27,8 @@ mymap("n", "<leader>f", LazyVim.pick("files"), opts)
 mymap("n", "<leader>t", LazyVim.pick("live_grep"), opts)
 mymap("n", "<leader>o", LazyVim.pick("oldfiles"), opts)
 mymap("n", "<leader>sk", LazyVim.pick("keymaps"), opts)
--- map("n", "<leader>sk", "<cmd>Telescope keymaps<cr>", opts)
--- map("n", "<leader>p", "<cmd>Telescope projects<cr>", opts)
--- map("n", "<leader>o", "<cmd>Telescope oldfiles<cr>", opts)
-mymap("n", "ge", LazyVim.pick("diagnostics"), opts)
--- map("n", "ge", "<cmd>Telescope diagnostics<cr>", opts)
+
+mymap("n", "ge", "<cmd>FzfLua diagnostics_workspace<CR>", opts)
 mymap("n", "gE", "<cmd>lua vim.diagnostic.open_float(0, { scope = 'line', border = 'rounded' })<CR>", opts)
 
 mymap("n", "<leader>j", ":HopWord<cr>", opts)
