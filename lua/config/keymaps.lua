@@ -14,6 +14,10 @@ local mymap = vim.keymap.set
 -- del lazyvim default keymap
 -- delkey("n", "<leader>q")
 
+-- rename function
+-- need set remap = true !
+vim.keymap.set('n', '<leader>rn', '<leader>cr', { remap = true })
+
 mymap("i", "jk", "<ESC>", opts)
 -- leader q for quit
 mymap("n", "<leader>q", ":q<CR>", opts)
